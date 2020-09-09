@@ -3,16 +3,49 @@ layout: default
 ---
 
 <div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+  {% for post in site.categories.projects %}
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <article class="project">
+      <div class="projectContentContainer">
 
-      <div class="entry">
-        {{ post.excerpt }}
+          <div class="projectFaceContainer">
+              <h1 class="typeOfProject">{{ post.typeOfProject }}</h1>
+              <img class="previewLogo" src="/images/{{ post.folder }}/{{ post.logo }}">
+
+              <!--  Max 3 icons displayed -->
+              <div class="projectLinks">
+                  {% if post.dribbble %}<a href="https://dribbble.com/{{ site.footer-links.dribbble }}"><i class="svg-icon dribbble"></i></a>{% endif %}
+                  {% if post.facebook %}<a href="https://www.facebook.com/{{ site.footer-links.facebook }}"><i class="svg-icon facebook"></i></a>{% endif %}
+                  {% if post.flickr %}<a href="https://www.flickr.com/{{ site.footer-links.flickr }}"><i class="svg-icon flickr"></i></a>{% endif %}
+                  {% if post.github %}<a href="https://github.com/{{ site.footer-links.github }}"><i class="svg-icon github"></i></a>{% endif %}
+                  {% if post.instagram %}<a href="https://instagram.com/{{ site.footer-links.instagram }}"><i class="svg-icon instagram"></i></a>{% endif %}
+                  {% if post.linkedin %}<a href="https://www.linkedin.com/in/{{ site.footer-links.linkedin }}"><i class="svg-icon linkedin"></i></a>{% endif %}
+                  {% if post.pinterest %}<a href="https://www.pinterest.com/{{ site.footer-links.pinterest }}"><i class="svg-icon pinterest"></i></a>{% endif %}
+                  {% if post.twitter %}<a href="https://www.twitter.com/{{ site.footer-links.twitter }}"><i class="svg-icon twitter"></i></a>{% endif %}
+                  {% if post.stackoverflow %}<a href="http://stackoverflow.com/{{ site.footer-links.stackoverflow }}"><i class="svg-icon stackoverflow"></i></a>{% endif %}
+                  {% if post.youtube %}<a href="https://youtube.com/{{ site.footer-links.youtube }}"><i class="svg-icon youtube"></i></a>{% endif %}
+              </div>
+          </div>
+
+          <div class="skillsAndTools">
+              <ul>
+                  {% for skillOrTool in post.skillsAndTools %}
+                    <li>{{skillOrTool}}</li>
+                  {% endfor %}
+              </ul>
+          </div>
+
+          <div class="projectArticleContainer">
+              <div class="headlineContainer">
+                  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+                  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+              </div>
+              <div class="entry">
+                {{ post.content }}
+              </div>
+          </div>
+
       </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
 </div>
