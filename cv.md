@@ -1,7 +1,7 @@
 ---
 layout: page
 title: curriculum vitae
-permalink: /CV/
+permalink: /cv/
 ---
 
 If you wish to view my curriculum vitae/resume, please contact me personally.
