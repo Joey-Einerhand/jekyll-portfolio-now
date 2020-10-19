@@ -1,8 +1,8 @@
 ---
-layout: appProject
-title: Project Title
+layout: miscProject
+title: Project Without Image
 folder: SecondProject
-logo: Logo.png
+logo:
 banner: 
 typeOfProject: Type
 skillsAndTools: [HTML, CSS, Jekyll]

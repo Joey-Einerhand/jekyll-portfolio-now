@@ -1,11 +1,12 @@
 ---
-layout: project
-title: First Project
+layout: miscProject
+title: Project with a banner
 folder: FirstProject
 logo: Logo.png
 banner: 
-typeOfProject: Game
+typeOfProject: Videogame
 skillsAndTools: [Unity, C#]
+projectLayout: Misc
 
 dribbble:
 email:
